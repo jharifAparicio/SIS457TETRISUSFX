@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 #include "piece.h"
 #include "mutantPiece.h"
 #include "previewer.h"
@@ -6,19 +7,20 @@
 #include "information.h"
 
 int main() {
+	
+	piece *piece_L = new piece("piece L","black");
 
-	//cout << "hola mundo" << endl;
-	piece piece_L("piece L", "FF3003");
+	cout << "nombre.- " << *piece_L->pName << endl <<
+		"Color.- " << *piece_L->pColour << endl <<
+		"numero de piezas.- " << *piece_L->pNumOfTiles << endl <<
+		"movimiento de la pieza.- " << *piece_L->pMoving << endl <<
+		"posicion eje X de la pieza.- " << *piece_L->pPositionX << endl <<
+		"posicion eje Y de la pieza.- " << *piece_L->pPositionX << endl <<
+		"velocidad de la pieza.- " << *piece_L->pVelocity << endl;
 
-	cout << "nombre.- " << *piece_L.pName << endl <<
-		"Color.- " << *piece_L.pColour << endl <<
-		"numero de piezas.- " << *piece_L.pNumOfTiles << endl <<
-		"movimiento de la pieza.- " << *piece_L.pMoving << endl <<
-		"posicion eje X de la pieza.- " << *piece_L.pPositionX << endl <<
-		"posicion eje Y de la pieza.- " << *piece_L.pPositionX << endl <<
-		"velocidad de la pieza.- " << *piece_L.pVelocity << endl;
+	piece_L->moveHorizontal(5);
 
-	piece_L.moveHorizontal(5);
+	delete(piece_L);
 	cout << "----------------------------------------------------------------" << endl;
 
 

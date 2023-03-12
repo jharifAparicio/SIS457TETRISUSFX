@@ -20,6 +20,7 @@ protected:
 public:
 	piece();
 	piece(string _name, string _colour);
+
 	//usaremos punteros en ves de metodos accesores
 	string* pName = &name;
 	string* pColour = &colour;
@@ -30,22 +31,19 @@ public:
 	int *pPositionX = &positionX;
 
 	//methods accesors
+
 	//string getNamePiece() {
 	//	return name;
 	//}
-
 	//string getColourPiece() {
 	//	return colour;
 	//}
-
-	///*bool getAppeareace() {
+	//*bool getAppeareace() {
 	//	return appearance <ve<>>;
 	//}*/
-
 	//int getNumOfTilesPiece() {
 	//	return numOfTiles;
 	//}
-
 	//bool getMovingPiece() {
 	//	return moving;
 	//}
