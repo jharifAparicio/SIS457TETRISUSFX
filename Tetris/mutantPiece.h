@@ -15,13 +15,9 @@ public:
 
 	mutantPiece(string _name, string _colour, int _numOfCopies, bool _modifyForm);
 
-	//methods accesors
-	int getnumOfCopiesMutant() {
-		return numOfCopies;
-	}
-	bool getModifyFormMutant() {
-		return modifyForm;
-	}
+	//metodos accesores con punteros
+	int *pNumOfCopies = &numOfCopies;
+	bool *pModifyForm = &modifyForm;
 
 	void copyPiece(int _numOfCopies);
 	void stopPiece(int _time);

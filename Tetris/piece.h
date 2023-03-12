@@ -20,35 +20,44 @@ protected:
 public:
 	piece();
 	piece(string _name, string _colour);
+	//usaremos punteros en ves de metodos accesores
+	string* pName = &name;
+	string* pColour = &colour;
+	vector<vector<bool>>* pAppearance = &appearance;
+	int *pNumOfTiles = &numOfTiles;
+	bool *pMoving = &moving;
+	float *pVelocity = &velocity;
+	int *pPositionX = &positionX;
+
 	//methods accesors
-	string getNamePiece() {
-		return name;
-	}
+	//string getNamePiece() {
+	//	return name;
+	//}
 
-	string getColourPiece() {
-		return colour;
-	}
+	//string getColourPiece() {
+	//	return colour;
+	//}
 
-	/*bool getAppeareace() {
-		return appearance <ve<>>;
-	}*/
+	///*bool getAppeareace() {
+	//	return appearance <ve<>>;
+	//}*/
 
-	int getNumOfTilesPiece() {
-		return numOfTiles;
-	}
+	//int getNumOfTilesPiece() {
+	//	return numOfTiles;
+	//}
 
-	bool getMovingPiece() {
-		return moving;
-	}
-	float getVelocityPiece() {
-		return velocity;
-	}
-	int getPositionXPiece() {
-		return positionX;
-	}
-	int getPositionYPiece() {
-		return positionY;
-	}
+	//bool getMovingPiece() {
+	//	return moving;
+	//}
+	//float getVelocityPiece() {
+	//	return velocity;
+	//}
+	//int getPositionXPiece() {
+	//	return positionX;
+	//}
+	//int getPositionYPiece() {
+	//	return positionY;
+	//}
 
 	//class methods
 	void rotate(int _angle);

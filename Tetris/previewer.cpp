@@ -11,7 +11,7 @@ previewer::previewer()
 	positionX = 0;
 	positionY = 0;
 	//inicializa el previewer
-	color = "black";
+	*pColor = "black";
 }
 
 previewer::previewer(string _nombre, string _color)
@@ -25,7 +25,7 @@ previewer::previewer(string _nombre, string _color)
 	positionX = 0;
 	positionY = 0;
 	//inicializa el previewer
-	color = _color;
+	*pColor = _color;
 }
 
 void previewer::drawPreviewer()

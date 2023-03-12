@@ -10,42 +10,44 @@ int main() {
 	//cout << "hola mundo" << endl;
 	piece piece_L("piece L", "FF3003");
 
-	cout << "nombre.- " << piece_L.getNamePiece() << endl <<
-		"Color.- " << piece_L.getColourPiece() << endl <<
-		"numero de piezas.- " << piece_L.getNumOfTilesPiece() << endl <<
-		"movimiento de la pieza.- " << piece_L.getMovingPiece() << endl <<
-		"posicion eje X de la pieza.- " << piece_L.getPositionXPiece() << endl <<
-		"posicion eje Y de la pieza.- " << piece_L.getPositionYPiece() << endl <<
-		"velocidad de la pieza.- " << piece_L.getVelocityPiece() << endl;
+	cout << "nombre.- " << *piece_L.pName << endl <<
+		"Color.- " << *piece_L.pColour << endl <<
+		"numero de piezas.- " << *piece_L.pNumOfTiles << endl <<
+		"movimiento de la pieza.- " << *piece_L.pMoving << endl <<
+		"posicion eje X de la pieza.- " << *piece_L.pPositionX << endl <<
+		"posicion eje Y de la pieza.- " << *piece_L.pPositionX << endl <<
+		"velocidad de la pieza.- " << *piece_L.pVelocity << endl;
 
 	piece_L.moveHorizontal(5);
 	cout << "----------------------------------------------------------------" << endl;
 
 
 	mutantPiece mutantPiece_L_I(5, true);
-	cout << "nombre.- " << mutantPiece_L_I.getNamePiece() << endl <<
-		"Color.- " << mutantPiece_L_I.getColourPiece() << endl <<
-		"numero de piezas.- " << mutantPiece_L_I.getNumOfTilesPiece() << endl <<
-		"movimiento de la pieza.- " << mutantPiece_L_I.getMovingPiece() << endl <<
-		"posicion eje X de la pieza.- " << mutantPiece_L_I.getPositionXPiece() << endl <<
-		"posicion eje Y de la pieza.- " << mutantPiece_L_I.getPositionYPiece() << endl <<
-		"velocidad de la pieza.- " << mutantPiece_L_I.getVelocityPiece() << endl;
+
+	cout << "nombre.- " << *mutantPiece_L_I.pName << endl <<
+		"Color.- " << *mutantPiece_L_I.pColour << endl <<
+		"numero de piezas.- " << *mutantPiece_L_I.pNumOfTiles << endl <<
+		"movimiento de la pieza.- " << *mutantPiece_L_I.pMoving << endl <<
+		"posicion eje X de la pieza.- " << *mutantPiece_L_I.pPositionX << endl <<
+		"posicion eje Y de la pieza.- " << *mutantPiece_L_I.pPositionX << endl <<
+		"velocidad de la pieza.- " << *mutantPiece_L_I.pVelocity << endl;
 
 	mutantPiece_L_I.copyPiece(5);
 	mutantPiece_L_I.stopPiece(20);
 	mutantPiece_L_I.changeShape("T");
 
-	piece_L.moveHorizontal(5);
+	mutantPiece_L_I.moveHorizontal(5);
 
 	cout << "----------------------------------------------------------------" << endl;
 	mutantPiece mutantPiece_I_L("piece I", "red", 10, true);
-	cout << "nombre.- " << mutantPiece_L_I.getNamePiece() << endl <<
-		"Color.- " << mutantPiece_L_I.getColourPiece() << endl <<
-		"numero de piezas.- " << mutantPiece_L_I.getNumOfTilesPiece() << endl <<
-		"movimiento de la pieza.- " << mutantPiece_L_I.getMovingPiece() << endl <<
-		"posicion eje X de la pieza.- " << mutantPiece_L_I.getPositionXPiece() << endl <<
-		"posicion eje Y de la pieza.- " << mutantPiece_L_I.getPositionYPiece() << endl <<
-		"velocidad de la pieza.- " << mutantPiece_L_I.getVelocityPiece() << endl;
+
+	cout << "nombre.- " << *mutantPiece_I_L.pName << endl <<
+		"Color.- " << *mutantPiece_I_L.pColour << endl <<
+		"numero de piezas.- " << *mutantPiece_I_L.pNumOfTiles << endl <<
+		"movimiento de la pieza.- " << *mutantPiece_I_L.pMoving << endl <<
+		"posicion eje X de la pieza.- " << *mutantPiece_I_L.pPositionX << endl <<
+		"posicion eje Y de la pieza.- " << *mutantPiece_I_L.pPositionX << endl <<
+		"velocidad de la pieza.- " << *mutantPiece_I_L.pVelocity << endl;
 
 	mutantPiece_L_I.copyPiece(10);
 	mutantPiece_L_I.stopPiece(20);
@@ -55,14 +57,14 @@ int main() {
 	//creamos un objeto de la clase previewer
 	previewer previewerPiece;
 
-	//imprimimos todas las propiedades de el previewer
-	cout << "nombre.- " << previewerPiece.getNamePiece() << endl <<
-		"Color.- " << previewerPiece.getColourPiece() << endl <<
-		"numero de piezas.- " << previewerPiece.getNumOfTilesPiece() << endl <<
-		"movimiento de la pieza.- " << previewerPiece.getMovingPiece() << endl <<
-		"posicion eje X de la pieza.- " << previewerPiece.getPositionXPiece() << endl <<
-		"posicion eje Y de la pieza.- " << previewerPiece.getPositionYPiece() << endl <<
-		"velocidad de la pieza.- " << previewerPiece.getVelocityPiece() << endl;
+	//imprimimos todas las propiedades con punteros
+	cout << "nombre.- " << *previewerPiece.pName << endl <<
+		"Color.- " << *previewerPiece.pColour << endl <<
+		"numero de piezas.- " <<* previewerPiece.pNumOfTiles << endl <<
+		"movimiento de la pieza.- " << *previewerPiece.pMoving << endl <<
+		"posicion eje X de la pieza.- " <<* previewerPiece.pPositionX << endl <<
+		"posicion eje Y de la pieza.- " << *previewerPiece.pPositionX << endl <<
+		"velocidad de la pieza.- " << *previewerPiece.pVelocity << endl;
 
 	//llamamos  a los metodos de previewer
 	previewerPiece.drawPreviewer();
@@ -77,13 +79,13 @@ int main() {
 	previewer previewerPiece2("Pieza Rara", "red");
 
 	//imprimimos todas las propiedades de el previewer
-	cout << "nombre.- " << previewerPiece2.getNamePiece() << endl <<
-		"Color.- " << previewerPiece2.getColourPiece() << endl <<
-		"numero de piezas.- " << previewerPiece2.getNumOfTilesPiece() << endl <<
-		"movimiento de la pieza.- " << previewerPiece2.getMovingPiece() << endl <<
-		"posicion eje X de la pieza.- " << previewerPiece2.getPositionXPiece() << endl <<
-		"posicion eje Y de la pieza.- " << previewerPiece2.getPositionYPiece() << endl <<
-		"velocidad de la pieza.- " << previewerPiece2.getVelocityPiece() << endl;
+	cout << "nombre.- " << *previewerPiece2.pName << endl <<
+		"Color.- " << *previewerPiece2.pColour << endl <<
+		"numero de piezas.- " << *previewerPiece2.pNumOfTiles << endl <<
+		"movimiento de la pieza.- " << *previewerPiece2.pMoving << endl <<
+		"posicion eje X de la pieza.- " << *previewerPiece2.pPositionX << endl <<
+		"posicion eje Y de la pieza.- " << *previewerPiece2.pPositionX << endl <<
+		"velocidad de la pieza.- " <<* previewerPiece2.pVelocity << endl;
 
 	//llamamos  a los metodos de previewer
 	previewerPiece2.drawPreviewer();

@@ -17,9 +17,7 @@ public:
 
 	//methods accesors
 
-	string getColorPreviewer() {
-		return color;
-	}
+	string* pColor = &color;
 	//class methods
 	void drawPreviewer();
 	void updatePreviewer();
