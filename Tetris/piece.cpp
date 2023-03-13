@@ -2,7 +2,7 @@
 
 piece::piece()
 {
-	name = "hola mundo";
+	name = "piece I";
 	colour = "red";
 	//appearance = { {true,true,false},{false, true,false},{false,true,false},{} };
 	numOfTiles = 4;
@@ -24,7 +24,7 @@ piece::piece(string _name, string _colour) {
 }
 void piece::rotate(int _angle)
 {
-	cout << "rotate 90°" << endl;
+	cout << "rotate: "<< _angle << endl;
 }
 
 void piece::moveHorizontal(int _positionX)
@@ -34,5 +34,5 @@ void piece::moveHorizontal(int _positionX)
 
 void piece::sppedUp(int _direction)
 {
-	cout << "velocity X2" << endl;
+	cout << "velocity x: "<< _direction << endl;
 }

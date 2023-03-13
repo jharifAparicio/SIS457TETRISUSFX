@@ -1,5 +1,5 @@
 #include <iostream>
-#include <stdlib.h>
+//#include <stdlib.h>
 #include "piece.h"
 #include "mutantPiece.h"
 #include "previewer.h"
@@ -7,6 +7,21 @@
 #include "information.h"
 
 int main() {
+	piece *piece_I = new piece();
+
+	cout<< "nombre.- " << *piece_I->pName << endl <<
+		"Color.- " << *piece_I->pColour << endl <<
+		"numero de piezas.- " << *piece_I->pNumOfTiles << endl <<
+		"movimiento de la pieza.- " << *piece_I->pMoving << endl <<
+		"posicion eje X de la pieza.- " << *piece_I->pPositionX << endl <<
+		"posicion eje Y de la pieza.- " << *piece_I->pPositionX << endl <<
+		"velocidad de la pieza.- " << *piece_I->pVelocity << endl;
+
+	piece_I->moveHorizontal(10);
+	piece_I->rotate(120);
+	piece_I->sppedUp(20);
+
+	cout << "----------------------------------------------------------------" << endl;
 	
 	piece *piece_L = new piece("piece L","black");
 
@@ -19,8 +34,8 @@ int main() {
 		"velocidad de la pieza.- " << *piece_L->pVelocity << endl;
 
 	piece_L->moveHorizontal(5);
-
-	delete(piece_L);
+	piece_L->rotate(90);
+	piece_L->sppedUp(20);
 
 	cout << "----------------------------------------------------------------" << endl;
 
@@ -41,7 +56,6 @@ int main() {
 
 	mutantPiece_L_I->moveHorizontal(10);
 
-	delete(mutantPiece_L_I);
 	cout << "----------------------------------------------------------------" << endl;
 
 	mutantPiece *mutantPiece_I_L = new mutantPiece("mutant piece I at L", "red", 10, true);
@@ -143,32 +157,50 @@ int main() {
 
 	cout << "----------------------------------------------------------------" << endl;
 
-	information information1;
+	information *information1 = new information;
 
-	cout << "nombre.- " << information1.getName() << endl <<
-		"lines complets.- " << information1.getLines() << endl <<
-		"max score.- " << information1.getMaxScore() << endl <<
-		"current score.- " << information1.getCurrentScore() << endl <<
-		"level.- " << information1.getLevel() << endl <<
-		"time.- " << information1.getHours() << " : " <<
-		information1.getMinutes() <<" : " <<
-		information1.getSeconds() << endl;
+	cout << "nombre.- " << *information1->pNameInfo << endl <<
+		"lines complets.- " << *information1->pLinesInfo << endl <<
+		"max score.- " << *information1->pMaxScoreInfo << endl <<
+		"current score.- " << *information1->pCurrentScoreInfo << endl <<
+		"level.- " << *information1->pLevelInfo << endl <<
+		"time.- " << *information1->pHoursInfo << " : " <<
+		*information1->pMinutesInfo <<" : " <<
+		*information1->pSecondsInfo << endl;
+
+	information1->updateInformation();
+	information1->drawInformation();
 
 	cout << "----------------------------------------------------------------" << endl;
 
-	information information2("info",10,20,10,0,0,10);
+	information *information2 = new information("info",10,20,10,0,0,10);
 
-	cout << "nombre.- " << information2.getName() << endl <<
-		"lines complets.- " << information2.getLines() << endl <<
-		"max score.- " << information2.getMaxScore() << endl <<
-		"current score.- " << information2.getCurrentScore() << endl <<
-		"level.- " << information2.getLevel() << endl <<
-		"time.- " << information2.getHours() << " : " <<
-		information2.getMinutes() << " : " <<
-		information2.getSeconds() << endl;
+	cout << "nombre.- " << *information2->pNameInfo << endl <<
+		"lines complets.- " << *information2->pLinesInfo << endl <<
+		"max score.- " << *information2->pMaxScoreInfo << endl <<
+		"current score.- " << *information2->pCurrentScoreInfo << endl <<
+		"level.- " << *information2->pLevelInfo << endl <<
+		"time.- " << *information2->pHoursInfo << " : " <<
+		*information2->pMinutesInfo << " : " <<
+		*information2->pSecondsInfo << endl;
 
 	//llama a los metodos de la clase information
-	information2.updateInformation();
-	information2.drawInformation();
+	information2->updateInformation();
+	information2->drawInformation();
 
+	//crea detructores de todos las funciones
+	information1->~information();
+	information2->~information();
+
+	scenePiece2->~scene();
+	scenePiece->~scene();
+
+	previewerPiece2->~previewer();
+	previewerPiece->~previewer();
+
+	mutantPiece_I_L->~mutantPiece();
+	mutantPiece_L_I->~mutantPiece();
+
+
+	piece_L->~piece();
 };

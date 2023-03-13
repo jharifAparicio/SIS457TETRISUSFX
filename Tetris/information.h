@@ -16,38 +16,14 @@ public:
 	information();
 	information(string _name, int _lines, int _score, int _level, int _hours, int _minutes, int _seconds);
 
-	//crea metodos accesores
-	std::string getName() {
-		return name;
-	}
-	
-	int getLines() {
-		return lines;
-	}
-
-	int getMaxScore() {
-		return maxScore;
-	}
-
-	int getCurrentScore() {
-		return currentScore;
-	}
-
-	int getLevel() {
-		return level;
-	}
-
-	int getHours() {
-		return hours;
-	}
-
-	int getMinutes() {
-		return minutes;
-	}
-
-	int getSeconds() {
-		return seconds;
-	}
+	string *pNameInfo = &name;
+	int *pLinesInfo = &lines;
+	int *pMaxScoreInfo = &maxScore;
+	int *pCurrentScoreInfo = &currentScore;
+	int *pLevelInfo = &level;
+	int *pHoursInfo = &hours;
+	int *pMinutesInfo = &minutes;
+	int *pSecondsInfo = &seconds;
 
 	//crea sus metodos
 	void drawInformation();
