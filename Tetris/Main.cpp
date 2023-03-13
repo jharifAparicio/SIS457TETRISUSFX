@@ -21,27 +21,29 @@ int main() {
 	piece_L->moveHorizontal(5);
 
 	delete(piece_L);
-	cout << "----------------------------------------------------------------" << endl;
-
-
-	mutantPiece mutantPiece_L_I(5, true);
-
-	cout << "nombre.- " << *mutantPiece_L_I.pName << endl <<
-		"Color.- " << *mutantPiece_L_I.pColour << endl <<
-		"numero de piezas.- " << *mutantPiece_L_I.pNumOfTiles << endl <<
-		"movimiento de la pieza.- " << *mutantPiece_L_I.pMoving << endl <<
-		"posicion eje X de la pieza.- " << *mutantPiece_L_I.pPositionX << endl <<
-		"posicion eje Y de la pieza.- " << *mutantPiece_L_I.pPositionX << endl <<
-		"velocidad de la pieza.- " << *mutantPiece_L_I.pVelocity << endl;
-
-	mutantPiece_L_I.copyPiece(5);
-	mutantPiece_L_I.stopPiece(20);
-	mutantPiece_L_I.changeShape("T");
-
-	mutantPiece_L_I.moveHorizontal(5);
 
 	cout << "----------------------------------------------------------------" << endl;
-	mutantPiece mutantPiece_I_L("piece I", "red", 10, true);
+
+
+	mutantPiece *mutantPiece_L_I = new mutantPiece(5, true);
+
+	cout << "nombre.- " << *mutantPiece_L_I->pName << endl <<
+		"Color.- " << *mutantPiece_L_I->pColour << endl <<
+		"numero de piezas.- " << *mutantPiece_L_I->pNumOfTiles << endl <<
+		"movimiento de la pieza.- " << *mutantPiece_L_I->pMoving << endl <<
+		"posicion eje X de la pieza.- " << *mutantPiece_L_I->pPositionX << endl <<
+		"posicion eje Y de la pieza.- " << *mutantPiece_L_I->pPositionX << endl <<
+		"velocidad de la pieza.- " << *mutantPiece_L_I->pVelocity << endl;
+
+	mutantPiece_L_I->copyPiece(5);
+	mutantPiece_L_I->stopPiece(20);
+	mutantPiece_L_I->changeShape("T");
+
+	mutantPiece_L_I->moveHorizontal(10);
+
+	delete(mutantPiece_L_I);
+	cout << "----------------------------------------------------------------" << endl;
+	mutantPiece *mutantPiece_I_L = new mutantPiece("mutant piece I at L", "red", 10, true);
 
 	cout << "nombre.- " << *mutantPiece_I_L.pName << endl <<
 		"Color.- " << *mutantPiece_I_L.pColour << endl <<
@@ -51,9 +53,9 @@ int main() {
 		"posicion eje Y de la pieza.- " << *mutantPiece_I_L.pPositionX << endl <<
 		"velocidad de la pieza.- " << *mutantPiece_I_L.pVelocity << endl;
 
-	mutantPiece_L_I.copyPiece(10);
-	mutantPiece_L_I.stopPiece(20);
-	mutantPiece_L_I.changeShape("I");
+	mutantPiece_I_L.copyPiece(10);
+	mutantPiece_I_L.stopPiece(20);
+	mutantPiece_I_L.changeShape("I");
 	cout << "----------------------------------------------------------------" << endl;
 
 	//creamos un objeto de la clase previewer

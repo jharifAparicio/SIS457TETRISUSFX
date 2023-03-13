@@ -28,18 +28,3 @@ void mutantPiece::changeShape(string _newForm)
 {
 	cout << "the piece changed shape at "+ _newForm << endl;
 }
-
-//void piece::rotate(int _angle)
-//{
-//	cout << "rotate 90°" << endl;
-//}
-//
-//void piece::moveHorizontal(int _positionX)
-//{
-//	cout << "move piece 1 left" << endl;
-//}
-//
-//void piece::sppedUp(int _direction)
-//{
-//	cout << "velocity X2" << endl;
-//}
