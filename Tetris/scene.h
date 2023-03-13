@@ -18,25 +18,12 @@ public:
 	scene();
 	scene(int _width, int _height, string _color, bool _status);
 
-	//crea metodos accesores
-	string getName() {
-		return name;
-	}
-	int getWidth() {
-		return width;
-	}
-
-	int getHeight() {
-		return height;
-	}
-
-	string getColor() {
-		return color;
-	}
-
-	bool getStatus() {
-		return status;
-	}
+	string *pNameScene = &name;
+	int *pWidthScene = &width;
+	int *pHeightScene = &height;
+	string *pColorScene = &color;
+	bool *pStatusScene = &status;
+	string *pSStatusScene = &sStatus;
 
 	//crea sus metodos
 	void drawScene();
